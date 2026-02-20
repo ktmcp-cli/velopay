@@ -1,13 +1,18 @@
 {
   "name": "@ktmcp-cli/velopay",
   "version": "1.0.0",
-  "description": "Production-ready CLI for Velo Payments mass payout API",
+  "description": "CLI for Velo Payments API - Mass payout processing",
   "type": "module",
   "main": "src/index.js",
   "bin": {
     "velopay": "bin/velopay.js"
   },
-  "keywords": ["velopay", "velo", "cli", "api", "ktmcp", "payments", "payouts"],
+  "keywords": [
+    "velopay",
+    "cli",
+    "api",
+    "ktmcp"
+  ],
   "author": "KTMCP",
   "license": "MIT",
   "dependencies": {
@@ -24,5 +29,8 @@
     "type": "git",
     "url": "git+https://github.com/ktmcp-cli/velopay.git"
   },
-  "homepage": "https://killthemcp.com/velopay-cli"
+  "homepage": "https://killthemcp.com/velopay-cli",
+  "bugs": {
+    "url": "https://github.com/ktmcp-cli/velopay/issues"
+  }
 }

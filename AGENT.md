@@ -2,62 +2,54 @@
 
 ## Overview
 
-The `velopay` CLI provides access to the Velo Payments mass payout API.
+The `velopay` CLI provides access to the Velo Payments API for mass payout processing.
 
 ## Prerequisites
 
 ```bash
-velopay config set --api-key <key> --api-secret <secret> --payor-id <id>
+velopay config set --api-key <key> --api-secret <secret>
+velopay config set --environment sandbox  # or production
 velopay auth login
 ```
 
-## All Commands
-
-### Config
-```bash
-velopay config set --api-key <key> --api-secret <secret> --payor-id <id>
-velopay config show
-```
+## Commands
 
 ### Auth
 ```bash
 velopay auth login
-velopay auth status
+velopay auth logout
+```
+
+### Payors
+```bash
+velopay payors list --json
+velopay payors get <payor-id> --json
 ```
 
 ### Payees
 ```bash
-velopay payees list --payor-id <id>
-velopay payees list --payor-id <id> --status ACTIVE
-velopay payees get <id>
-velopay payees delete <id>
+velopay payees list --json
+velopay payees get <payee-id> --json
 ```
 
 ### Payouts
 ```bash
-velopay payouts list --payor-id <id>
-velopay payouts get <id>
-velopay payouts submit --file payout.json
-velopay payouts withdraw <id>
+velopay payouts list --json
+velopay payouts get <payout-id> --json
 ```
 
 ### Payments
 ```bash
-velopay payments list
-velopay payments list --payout-id <id>
-velopay payments get <id>
+velopay payments list --json
 ```
 
-### Payor
+### Funding
 ```bash
-velopay payor get <id>
-velopay payor funding-accounts <id>
+velopay funding accounts --json
 ```
 
-## JSON Output
+## Tips
 
-Always use `--json` when parsing programmatically:
-```bash
-velopay payees list --payor-id <id> --json
-velopay payouts list --payor-id <id> --json
-```
+- Supports sandbox and production environments
+- Payouts can contain 1-2000 payments
+- Always use `--json` for programmatic access
